@@ -10,9 +10,16 @@ import SwiftData
 
 @Model
 final class Item {
-    var timestamp: Date
+    var id: UUID
+    var title: String
+    var isDone: Bool
+    var createDate: Date
+    var completeDate: Date?
     
-    init(timestamp: Date) {
-        self.timestamp = timestamp
+    init(title: String, isDone: Bool = false) {
+        self.id = UUID()
+        self.title = title
+        self.isDone = isDone
+        self.createDate = Date()
     }
 }
